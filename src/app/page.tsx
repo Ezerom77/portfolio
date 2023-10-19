@@ -18,6 +18,7 @@ import {
   Projects as ProjectsType,
 } from "../../typings";
 import { fetchExperiences } from "@/utils/fetchExperiences";
+import Image from "next/image";
 
 interface Props {
   socials: Socials[];
@@ -27,7 +28,7 @@ interface Props {
   projects: ProjectsType[];
 }
 
-export default async function Home({}: Props) {
+export default async function Home() {
   const socials = await fetchSocials();
   const pageInfo = await fetchPageInfo();
   const experiences = await fetchExperiences();
@@ -58,10 +59,12 @@ export default async function Home({}: Props) {
       <footer className="sticky bottom-5 w-full cursor-pointer">
         <div>
           <Link href="#hero">
-            <img
-              className="h-10 w-10 rounded-full grayscale hover:grayscale-0 cursor-pointer mx-auto"
+            <Image
+              className=" rounded-full grayscale hover:grayscale-0 cursor-pointer mx-auto"
               src="/up.png"
-              alt=""
+              width={30}
+              height={30}
+              alt="Up"
             />
           </Link>
         </div>
