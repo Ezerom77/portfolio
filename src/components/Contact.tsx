@@ -40,11 +40,11 @@ function Contact({}: Props) {
         <div className=" space-y-10">
           <div className="flex items-center space-x-5 justify-center">
             <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className=" text-2xl">+123456790</p>
+            <p className=" text-2xl">+54 9 11 6720 3939</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
             <MapPinIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className=" text-2xl">123, Main Street, New York</p>
+            <p className=" text-2xl"> Bunos Aires, Argentina</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
             <EnvelopeIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
