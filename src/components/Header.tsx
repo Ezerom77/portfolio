@@ -1,11 +1,13 @@
 "use client";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { SanitySocials } from "../../typings";
 
-type Props = {};
+type Props = {
+  socials: SanitySocials[];
+};
 
-const Header = (props: Props) => {
+const Header = ({ socials }: Props) => {
   return (
     <header className=" sticky  p-5 top-0 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
       <motion.div
@@ -25,23 +27,16 @@ const Header = (props: Props) => {
         className="flex flex-row items-center"
       >
         {/* social icons */}
-        <SocialIcon
-          url="https://twitter.com/ezerom77"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          url="https://twitter.com/ezerom77"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          url="https://twitter.com/ezerom77"
-          fgColor="gray"
-          bgColor="transparent"
-        />
+        {socials?.map((social) => (
+          <SocialIcon
+            key={social._id}
+            url={social.url}
+            fgColor="gray"
+            bgColor="transparent"
+            className="cursor-pointer"
+          />
+        ))}
       </motion.div>
-      {/* <Link href="#contacts"> */}
       <motion.div
         initial={{
           x: 500,
@@ -58,6 +53,7 @@ const Header = (props: Props) => {
         }}
       >
         <SocialIcon
+          url="#contact"
           className="cursor-pointer"
           network="email"
           fgColor="gray"
@@ -67,7 +63,6 @@ const Header = (props: Props) => {
           Get in Touch
         </p>
       </motion.div>
-      {/* </Link> */}
     </header>
   );
 };

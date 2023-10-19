@@ -1,10 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
 import Skill from "./Skill";
+import { SanitySkills } from "../../typings";
 
-type Props = {};
-
-const Skills = (props: Props) => {
+type Props = {
+  skills: SanitySkills[];
+};
+const Skills = ({ skills }: Props) => {
   return (
     <motion.div
       initial={{
