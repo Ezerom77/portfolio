@@ -1,9 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['avatars.githubusercontent.com'],
+    domains: ["cdn.sanity.io"],
   },
-  reactStrictMode: true,
 }
 
 module.exports = nextConfig

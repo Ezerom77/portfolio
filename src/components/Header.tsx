@@ -1,10 +1,10 @@
 "use client";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
-import { SanitySocials } from "../../typings";
+import { Socials } from "../../typings";
 
 type Props = {
-  socials: SanitySocials[];
+  socials: Socials[];
 };
 
 const Header = ({ socials }: Props) => {
@@ -31,6 +31,7 @@ const Header = ({ socials }: Props) => {
           <SocialIcon
             key={social._id}
             url={social.url}
+            target="_blank"
             fgColor="gray"
             bgColor="transparent"
             className="cursor-pointer"

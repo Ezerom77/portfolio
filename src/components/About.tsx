@@ -1,9 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
+import { PageInfo } from "../../typings";
+import { urlForImage } from "../../sanity/lib/image";
 
-type Props = {};
-
-const About = (props: Props) => {
+type Props = {
+  pageInfo: PageInfo;
+};
+const About = ({ pageInfo }: Props) => {
   return (
     <motion.div
       initial={{
@@ -34,7 +37,7 @@ const About = (props: Props) => {
           opacity: 1,
         }}
         viewport={{ once: true }}
-        src="https://avatars.githubusercontent.com/u/89082504?s=400&u=56d3267e1ab53c1a8a020406d43fe3b47084dac2&v=4"
+        src={urlForImage(pageInfo?.profilePic).url()}
         className=" -mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover
         md:rounded-lg md:w-64 md:h95 xl:w-[500px] xl:h-[600px]"
       />
@@ -44,16 +47,7 @@ const About = (props: Props) => {
           <span className="underline decoration-[#F7AB0A]/50">little</span>{" "}
           background
         </h4>
-        <p className="text-base">
-          With extensive experience as a PM in Tech, Marketing, and
-          Communication projects, I took my first strides in a
-          telecommunications multinational, where I honed my skills across
-          various fields for nearly a decade. I&apos;m an experienced trainer in
-          onboarding, customer service, complaint management, and system
-          handling. I bring expertise in content creation, process analysis and
-          improvement, marketing action planning, and team coordination. A
-          natural-born photographer and techie, always on the move! 🚀
-        </p>
+        <p className="text-base">{pageInfo?.backgroudInformation}</p>
       </div>
     </motion.div>
   );

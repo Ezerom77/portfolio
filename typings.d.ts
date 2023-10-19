@@ -1,11 +1,11 @@
-interface SanityBody {
+interface Body {
   _id: string;
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
 }
 
-interface Image {
+interface Imagen {
   _type: "image";
   asset: {
     _ref: string;
@@ -13,53 +13,52 @@ interface Image {
   };
 }
 
-export interface SanityPageInfo extends SanityBody {
+export interface PageInfo extends Body {
   _type: "pageInfo";
   address: string;
   backgroudInformation: string;
   email: string;
   role: string;
-  heroImage: Image;
+  heroImage: Imagen;
   name: string;
   phoneNumber: string;
-  profilePic: Image;
+  profilePic: Imagen;
 }
 
-export interface SanitySkills extends SanityBody {
+export interface SanitySkills extends Body {
   _type: "skill";
   title: string;
   progress: number;
-  image: Image;
+  image: Imagen;
 }
-export interface SanityTechnology extends SanityBody {
+export interface Technology extends Body {
   _type: "skill";
   title: string;
   progress: number;
-  image: Image;
+  image: Imagen;
 }
-export interface SanityProjects extends SanityBody {
+export interface Projects extends Body {
   _type: "project";
   title: string;
-  description: string;
-  image: Image;
-  url: string;
-  github: string;
-  technologies: SanityTechnology[];
+  summary: string;
+  image: Imagen;
+  linkToBuild: string;
+  technologies: Technology[];
 }
 
-export interface SanityExperiences extends SanityBody {
+export interface Experiences extends Body {
   _type: "experience";
   company: string;
-  companyImage: Image;
+  companyImage: Imagen;
   dateStarted: date;
   dateEnded: date;
   isCurrentlyWorkingHere: boolean;
   jobTitle: string;
   points: string[];
-  technologies: SanityTechnology[];
+  technologies: Technology[];
 }
 
-export interface SanitySocials extends SanityBody {
+export interface Socials extends Body {
   _type: "socialMedia";
   name: string;
   url: string;

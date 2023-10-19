@@ -3,7 +3,7 @@ import { client } from "../../sanity/lib/client";
 import { SanitySkills } from "../../typings";
 
 const query = groq`
-  *[_type == "skills"]`;
+  *[_type == "skill"]`;
 
 type Data = {
   skills: SanitySkills[];

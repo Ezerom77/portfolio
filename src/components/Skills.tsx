@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Skill from "./Skill";
 import { SanitySkills } from "../../typings";
+import { urlForImage } from "../../sanity/lib/image";
 
 type Props = {
   skills: SanitySkills[];
@@ -28,16 +29,12 @@ const Skills = ({ skills }: Props) => {
         Hover over a skill for currency proficiency
       </h3>
       <div className=" grid grid-cols-4 gap-5">
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
+        {skills?.slice(0, skills.length / 2).map((skill) => (
+          <Skill key={skill._id} skill={skill} />
+        ))}
+        {skills?.slice(skills.length / 2, skills.length).map((skill) => (
+          <Skill key={skill._id} skill={skill} directionLeft />
+        ))}
       </div>
     </motion.div>
   );
