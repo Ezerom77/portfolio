@@ -9,6 +9,5 @@ type Data = {
 };
 export async function fetchProjects() {
   const projects: Projects[] = await client.fetch(query);
-  console.log(projects);
   return projects;
 }

@@ -19,29 +19,29 @@ export interface PageInfo extends Body {
   backgroudInformation: string;
   email: string;
   role: string;
-  heroImage: Imagen;
+  heroImage: any;
   name: string;
   phoneNumber: string;
-  profilePic: Imagen;
+  profilePic: any;
 }
 
 export interface SanitySkills extends Body {
   _type: "skill";
   title: string;
   progress: number;
-  image: Imagen;
+  image: any;
 }
 export interface Technology extends Body {
   _type: "skill";
   title: string;
   progress: number;
-  image: Imagen;
+  image: any;
 }
 export interface Projects extends Body {
   _type: "project";
   title: string;
   summary: string;
-  image: Imagen;
+  image: any;
   linkToBuild: string;
   technologies: Technology[];
 }
@@ -49,7 +49,7 @@ export interface Projects extends Body {
 export interface Experiences extends Body {
   _type: "experience";
   company: string;
-  companyImage: Imagen;
+  companyImage: any;
   dateStarted: date;
   dateEnded: date;
   isCurrentlyWorkingHere: boolean;

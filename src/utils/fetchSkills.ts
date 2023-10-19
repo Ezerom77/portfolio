@@ -10,6 +10,5 @@ type Data = {
 };
 export async function fetchSkills() {
   const skills: SanitySkills[] = await client.fetch(query);
-  console.log(skills);
   return skills;
 }

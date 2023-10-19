@@ -24,13 +24,13 @@ interface Props {
   socials: Socials[];
   skills: SanitySkills[];
   pageInfo: PageInfo;
-  experiences: Experiences[];
+  experience: Experiences[];
   projects: ProjectsType[];
 }
 
 export const revalidate = 900;
 
-const Page = async () => {
+export default async function Home() {
   const socials = await fetchSocials();
   const pageInfo = await fetchPageInfo();
   const experiences = await fetchExperiences();
@@ -73,5 +73,4 @@ const Page = async () => {
       </footer>
     </div>
   );
-};
-export default Page;
+}

@@ -20,6 +20,5 @@ type Data = {
 };
 export async function fetchExperiences() {
   const experiences: Experiences[] = await client.fetch(query);
-  console.log(experiences);
   return experiences;
 }
