@@ -2,6 +2,8 @@
 import { motion } from "framer-motion";
 import { Projects as ProjectsType } from "../../typings";
 import { urlForImage } from "../../sanity/lib/image";
+import Link from "next/link";
+import Image from "next/image";
 
 type Props = {
   projects: ProjectsType[];
@@ -31,22 +33,25 @@ const Projects = ({ projects }: Props) => {
             key={project._id}
             className=" w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
           >
-            <motion.img
-              initial={{
-                y: -300,
-                opacity: 0,
-              }}
-              transition={{
-                duration: 1.2,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{ once: true }}
-              src={urlForImage(project?.image).url()}
-              alt=""
-            />
+            <Link href={project.linkToBuild} target="_blank">
+              <motion.img
+                initial={{
+                  y: -300,
+                  opacity: 0,
+                }}
+                transition={{
+                  duration: 1.2,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{ once: true }}
+                src={urlForImage(project?.image).url()}
+                alt=""
+                className="h-[300px]  rounded shadow-2xl"
+              />
+            </Link>
             <div className=" space-y-10 px-0 md:px-10 max-w-6xl">
               <h4 className="text-4xl font-semibold text-center">
                 <span className="underline decoration-[#F7AB0A]/50">
@@ -54,6 +59,23 @@ const Projects = ({ projects }: Props) => {
                 </span>{" "}
                 {project.title}
               </h4>
+              <div>
+                <h5 className="text-2xl font-semibold text-center pb-2">
+                  Technologies used:
+                </h5>
+                <div className="flex items-center justify-center space-x-2">
+                  {project.technologies.map((tech, i) => (
+                    <Image
+                      key={i}
+                      src={urlForImage(tech.image).url()}
+                      width={50}
+                      height={50}
+                      alt=""
+                      className="h-10 w-10"
+                    />
+                  ))}
+                </div>
+              </div>
               <p className=" text-lg text-center md:text-left">
                 {project.summary}
               </p>

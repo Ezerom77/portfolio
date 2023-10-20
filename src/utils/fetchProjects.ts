@@ -2,7 +2,15 @@ import { groq } from "next-sanity";
 import { client } from "../../sanity/lib/client";
 import { Projects } from "../../typings";
 
-const query = groq`*[_type == "project"]`;
+const query = groq`*[_type == "project"]{
+  _id,
+  _type,
+  summary,
+  image,
+  linkToBuild,
+  technologies[]->
+}
+`;
 
 type Data = {
   projects: Projects[];
