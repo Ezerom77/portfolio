@@ -36,8 +36,8 @@ const ExperienceCard = ({ experience }: Props) => {
               key={tech._id}
               src={urlForImage(tech.image).url()}
               alt={tech.title}
-              width={40}
-              height={40}
+              width={36}
+              height={36}
             />
           ))}
         </div>

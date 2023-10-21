@@ -27,11 +27,11 @@ const Projects = ({ projects }: Props) => {
         Projects
       </h3>
 
-      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20">
+      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 pt-0 md:pt-32">
         {projects.map((project, i) => (
           <div
             key={project._id}
-            className=" w-screen flex-shrink-0 snap-center flex flex-col space-y-2 md:space-y-5 items-center justify-center p-3 md:p-44 h-screen"
+            className=" w-screen flex-shrink-0 snap-center flex flex-col space-y-2 md:space-y-5 items-center justify-center p-3 md:p-44  h-screen"
           >
             <Link href={project.linkToBuild} target="_blank">
               <motion.img
@@ -49,7 +49,7 @@ const Projects = ({ projects }: Props) => {
                 viewport={{ once: true }}
                 src={urlForImage(project?.image).url()}
                 alt=""
-                className="h-[80px] md:h-[300px]  rounded shadow-2xl"
+                className="h-[80px] md:h-[300px]  rounded shadow-2xl pt-0 md:pt-5"
               />
             </Link>
             <div className=" space-y-5 md:space-y-10 px-0 md:px-10 max-w-6xl">
@@ -63,7 +63,7 @@ const Projects = ({ projects }: Props) => {
                 <h5 className="text-xl md:text-2xl font-semibold text-center pb-1 md:pb-2">
                   Technologies used:
                 </h5>
-                <div className="flex items-center justify-center space-x-2">
+                <div className="flex items-center justify-center space-x-2 ">
                   {project.technologies.map((tech, i) => (
                     <Image
                       key={i}
