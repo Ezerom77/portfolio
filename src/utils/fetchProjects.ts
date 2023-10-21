@@ -5,6 +5,7 @@ import { Projects } from "../../typings";
 const query = groq`*[_type == "project"]{
   _id,
   _type,
+  title,
   summary,
   image,
   linkToBuild,
