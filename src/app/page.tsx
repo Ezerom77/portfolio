@@ -12,6 +12,7 @@ import { fetchSkills } from "@/utils/fetchSkills";
 import { fetchPageInfo } from "@/utils/fetchPageInfo";
 import { fetchProjects } from "@/utils/fetchProjects";
 import { fetchExperiences } from "@/utils/fetchExperiences";
+import Footer from "@/components/Footer";
 // import {
 //   Socials,
 //   SanitySkills,
@@ -57,23 +58,7 @@ const Page = async () => {
       <section id="contact" className="snap-start">
         <Contact />
       </section>
-
-      <footer className="sticky bottom-5 w-full text-center cursor-pointer">
-        <div>
-          <Link href="#hero">
-            {/* <Image
-              className=" rounded-full grayscale hover:grayscale-0 cursor-pointer mx-auto"
-              src="/up.png"
-              width={30}
-              height={30}
-              alt="Up"
-            /> */}
-            <button className="rounded-full bg-slate-500/70 p-1 grayscale hover:grayscale-0 cursor-pointer mx-auto text-center text-sm animate-pulse duration-2000">
-              Up
-            </button>
-          </Link>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
