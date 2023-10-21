@@ -24,11 +24,11 @@ function Contact({}: Props) {
       className=" h-screen relative flex flex-col text-center md:text-left md:flex-row
      max-w-7xl px-10 justify-evenly mx-auto items-center"
     >
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="absolute top-16 md:top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
         Contacts
       </h3>
-      <div className="flex flex-col space-y-10">
-        <h4 className="text-4xl font-semibold text-center">
+      <div className="flex flex-col space-y-8">
+        <h4 className=" text-sm top-28 md:top-36 md:text-3xl font-semibold text-center">
           I have got just what you need. {""}
           <span
             className="underline
@@ -37,49 +37,49 @@ function Contact({}: Props) {
             let&apos;s talk
           </span>
         </h4>
-        <div className=" space-y-10">
+        <div className=" space-y-2">
           <div className="flex items-center space-x-5 justify-center">
-            <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className=" text-2xl">+54 9 11 6720 3939</p>
+            <PhoneIcon className="text-[#F7AB0A] h-4 w-4 md:h-7 md:w-7 animate-pulse" />
+            <p className=" text-sm md:text-2xl">+54 9 11 6720 3939</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
-            <MapPinIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className=" text-2xl"> Bunos Aires, Argentina</p>
+            <MapPinIcon className="text-[#F7AB0A] h-4 w-4 md:h-7 md:w-7 animate-pulse" />
+            <p className=" text-sm md:text-2xl"> Bunos Aires, Argentina</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
-            <EnvelopeIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
+            <EnvelopeIcon className="text-[#F7AB0A] h-4 w-4 md:h-7 md:w-7 animate-pulse" />
           </div>
         </div>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-2 w-fit mx-auto"
+          className="flex flex-col space-y-1 md:space-y-2 w-fit mx-auto"
         >
-          <div className="flex space-x-2">
+          <div className="flex flex-col md:flex-row space-y-1 md:space-y-0  space-x-0 md:space-x-2">
             <input
               {...register("name")}
               type="text"
-              className="contactInput"
+              className="contactInputSm md:contactInput"
               placeholder="Name"
             />
             <input
               {...register("email")}
               type="email  "
-              className="contactInput"
+              className="contactInputSm md:contactInput"
               placeholder="Email"
             />
           </div>
           <input
             {...register("subject")}
             type="text"
-            className="contactInput"
+            className="contactInputSm md:contactInput"
             placeholder="Subjet"
           />
           <textarea
             {...register("message")}
-            className="contactInput"
+            className="contactInputSm md:contactInput"
             placeholder="Message"
           />
-          <button className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg">
+          <button className="bg-[#F7AB0A] py-2 md:py-5 px-5 md:px-10 rounded-md text-black font-bold text-sm md:text-lg">
             Submit
           </button>
         </form>
