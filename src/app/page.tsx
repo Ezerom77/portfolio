@@ -12,21 +12,21 @@ import { fetchSkills } from "@/utils/fetchSkills";
 import { fetchPageInfo } from "@/utils/fetchPageInfo";
 import { fetchProjects } from "@/utils/fetchProjects";
 import { fetchExperiences } from "@/utils/fetchExperiences";
-import {
-  Socials,
-  SanitySkills,
-  PageInfo,
-  Experiences,
-  Projects as ProjectsType,
-} from "../../typings";
+// import {
+//   Socials,
+//   SanitySkills,
+//   PageInfo,
+//   Experiences,
+//   Projects as ProjectsType,
+// } from "../../typings";
 
-interface Props {
-  socials: Socials[];
-  skills: SanitySkills[];
-  pageInfo: PageInfo;
-  experiences: Experiences[];
-  projects: ProjectsType[];
-}
+// interface Props {
+//   socials: Socials[];
+//   skills: SanitySkills[];
+//   pageInfo: PageInfo;
+//   experiences: Experiences[];
+//   projects: ProjectsType[];
+// }
 
 export const revalidate = 900;
 

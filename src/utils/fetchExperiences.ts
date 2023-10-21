@@ -12,7 +12,7 @@ const query = groq`*[_type == "experience"]{
   isCurrentlyWorkingHere,
   jobTitle,
   technologies[]->,
-  points[]->,
+  points[],
 }`;
 
 type Data = {

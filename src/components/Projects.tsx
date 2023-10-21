@@ -21,7 +21,7 @@ const Projects = ({ projects }: Props) => {
       transition={{
         duration: 1.5,
       }}
-      className="h-screen relative flex overflow-hidden  flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0"
+      className=" h-100 md:h-screen relative flex overflow-hidden  flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0"
     >
       <h3 className="absolute top-16 md:top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
         Projects
@@ -52,7 +52,7 @@ const Projects = ({ projects }: Props) => {
                 className="h-[80px] md:h-[300px]  rounded shadow-2xl"
               />
             </Link>
-            <div className=" space-y-10 px-0 md:px-10 max-w-6xl">
+            <div className=" space-y-5 md:space-y-10 px-0 md:px-10 max-w-6xl">
               <h4 className="text-lg md:text-2xl font-semibold text-center">
                 <span className="underline decoration-[#F7AB0A]/50">
                   Case of study {i + 1} of {projects.length}:
