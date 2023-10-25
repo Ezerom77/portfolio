@@ -27,11 +27,11 @@ const Projects = ({ projects }: Props) => {
         Projects
       </h3>
 
-      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 pt-0 md:pt-32">
+      <div className="relative w-full h-screen flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 pt-0 md:pt-32 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
         {projects.map((project, i) => (
           <div
             key={project._id}
-            className=" w-screen flex-shrink-0 snap-center flex flex-col space-y-2 md:space-y-5 items-center justify-center p-3 md:p-44 h-screen mb-6"
+            className=" w-screen h-auto flex-shrink-0 snap-center flex flex-col space-y-0 md:space-y-5 items-center justify-center p-3 md:p-44 mb-3"
           >
             <Link href={project.linkToBuild} target="_blank">
               <motion.img
@@ -49,10 +49,10 @@ const Projects = ({ projects }: Props) => {
                 viewport={{ once: true }}
                 src={urlForImage(project?.image).url()}
                 alt=""
-                className="h-[80px] md:h-[300px]  rounded shadow-2xl pt-0 md:pt-5"
+                className="h-auto md:h-[300px]  rounded shadow-2xl pt-0 md:pt-5"
               />
             </Link>
-            <div className=" space-y-5 md:space-y-10 px-0 md:px-10 max-w-6xl">
+            <div className=" space-y-2 md:space-y-10 px-0 md:px-10 max-w-6xl">
               <h4 className="text-lg md:text-2xl font-semibold text-center">
                 <span className="underline decoration-[#F7AB0A]/50">
                   Case of study {i + 1} of {projects.length}:
@@ -60,7 +60,7 @@ const Projects = ({ projects }: Props) => {
                 {project.title}
               </h4>
               <div>
-                <h5 className="text-xl md:text-2xl font-semibold text-center pb-1 md:pb-2">
+                <h5 className="text-lg md:text-2xl font-semibold text-center pb-1 md:pb-2">
                   Technologies used:
                 </h5>
                 <div className="flex items-center justify-center space-x-2 ">
@@ -76,7 +76,7 @@ const Projects = ({ projects }: Props) => {
                   ))}
                 </div>
               </div>
-              <p className=" text-xs md:text-lg text-center md:text-left">
+              <p className=" text-xs md:text-lg text-center md:text-left px-2">
                 {project.summary}
               </p>
             </div>
